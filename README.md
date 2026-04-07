@@ -1,6 +1,6 @@
 # InternHub
 
-InternHub is a full-stack MVP for a student internship/job platform built for a team project. It includes JWT authentication, role-based flows for students and employers, vacancy management, applications, PostgreSQL persistence, Alembic migrations, demo seed data, and a React frontend.
+InternHub is a full-stack MVP for a student internship/job platform built by a student team. It includes JWT authentication, role-based flows for students and employers, vacancy management, applications, PostgreSQL persistence, Alembic migrations, demo seed data, and a React frontend.
 
 ## Stack
 
@@ -22,43 +22,85 @@ InternHub is a full-stack MVP for a student internship/job platform built for a 
 - Swagger/OpenAPI docs at `/docs`
 - Idempotent demo seed data
 
+## SDG Relevance
+
+- **SDG 8: Decent Work and Economic Growth**. InternHub helps students access internships and entry-level roles, reduces friction between candidates and employers, and supports early career mobility.
+- **SDG 4: Quality Education**. The platform supports the transition from education to employment by giving students a practical way to apply skills, build experience, and discover relevant opportunities.
+
+## Project Ownership
+
+- InternHub is developed by a student team as an open-source project.
+- The repository is intended for transparent collaboration, review, and reuse.
+- Contributions are welcomed through GitHub issues and pull requests.
+
+## Platform Independence
+
+- InternHub is a web application that works in a modern browser.
+- The frontend and backend can run independently and do not depend on a specific operating system.
+- Docker Compose is provided for consistent local setup and container-based deployment.
+- The project can be deployed anywhere that supports the required web stack and PostgreSQL.
+
+## Documentation
+
+- This `README.md` covers setup, structure, and API overview.
+- Swagger/OpenAPI documentation is available at `/docs`.
+- Contribution workflow is documented in [`CONTRIBUTING.md`](CONTRIBUTING.md).
+- Community expectations are documented in [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).
+- Security reporting and security-related practices are documented in [`SECURITY.md`](SECURITY.md).
+
+## Non-Discrimination and Do No Harm
+
+- InternHub is intended to support equal access to internship and early-career opportunities.
+- The project aims for transparent platform behavior, clear responsibilities, and respectful collaboration.
+- Community participation is governed by [`CODE_OF_CONDUCT.md`](CODE_OF_CONDUCT.md).
+- A future improvement area is bias-reduction support such as blind screening for candidate review flows.
+
+## Privacy and Data Security
+
+- Authentication is based on JWT tokens.
+- Passwords are stored using secure hashing rather than plain text.
+- Role-based access control (RBAC) is used to separate student and employer actions.
+- Input validation is enforced in the API layer before data reaches core services.
+- Application data is stored in PostgreSQL.
+- HTTPS should be enforced for all production deployments.
+
 ## Project Structure
 
 ```text
 InternHub/
-├── backend/
-│   ├── alembic/
-│   │   ├── env.py
-│   │   └── versions/
-│   │       └── 20260408_01_initial.py
-│   ├── app/
-│   │   ├── api/
-│   │   │   ├── deps.py
-│   │   │   ├── router.py
-│   │   │   └── routes/
-│   │   ├── core/
-│   │   ├── db/
-│   │   ├── models/
-│   │   ├── schemas/
-│   │   └── services/
-│   ├── Dockerfile
-│   ├── alembic.ini
-│   └── requirements.txt
-├── frontend/
-│   ├── public/
-│   ├── src/
-│   │   ├── api/
-│   │   ├── components/
-│   │   ├── context/
-│   │   ├── pages/
-│   │   └── styles/
-│   ├── Dockerfile
-│   ├── nginx.conf
-│   ├── package.json
-│   └── vite.config.js
-├── .env.example
-├── docker-compose.yml
-└── README.md
+|-- backend/
+|   |-- alembic/
+|   |   |-- env.py
+|   |   `-- versions/
+|   |       `-- 20260408_01_initial.py
+|   |-- app/
+|   |   |-- api/
+|   |   |   |-- deps.py
+|   |   |   |-- router.py
+|   |   |   `-- routes/
+|   |   |-- core/
+|   |   |-- db/
+|   |   |-- models/
+|   |   |-- schemas/
+|   |   `-- services/
+|   |-- Dockerfile
+|   |-- alembic.ini
+|   `-- requirements.txt
+|-- frontend/
+|   |-- public/
+|   |-- src/
+|   |   |-- api/
+|   |   |-- components/
+|   |   |-- context/
+|   |   |-- pages/
+|   |   `-- styles/
+|   |-- Dockerfile
+|   |-- nginx.conf
+|   |-- package.json
+|   `-- vite.config.js
+|-- .env.example
+|-- docker-compose.yml
+`-- README.md
 ```
 
 ## Quick Start With Docker
